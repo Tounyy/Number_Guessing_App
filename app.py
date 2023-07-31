@@ -6,7 +6,7 @@ if 'lives' not in st.session_state:
     st.session_state['lives'] = 3
 
 # Nadpis
-st.markdown("<h1 style='text-align: center; color: white; font-size: 35px;'> Number Guessing Game </h1>",
+st.markdown("<h1 style='text-align: center; font-size: 35px;'> Number Guessing Game </h1>",
             unsafe_allow_html=True)
 
 # Počítač
@@ -28,7 +28,7 @@ with st.form("form"):
     if st.form_submit_button('Click'):
         if st.session_state['computer'] == player:
             st.markdown(
-                "<h1 style='text-align: center; color: white; font-size: 25px;'>Vyhrali jste hru!</h1>", unsafe_allow_html=True)
+                "<h1 style='text-align: center; font-size: 25px;'>Vyhrali jste hru!</h1>", unsafe_allow_html=True)
             st.write("Číslo, které jste si vybral: " + str(player))
             st.write("Číslo, které si robot vybral: " + str(st.session_state['computer']))
             reset_game()
@@ -38,7 +38,7 @@ with st.form("form"):
             st.write("Číslo, které jste si vybral: " + str(player))
         if st.session_state['lives'] == -1:
             st.markdown(
-                "<h1 style='text-align: center; color: white; font-size: 25px'>Prohráli jste hru!</h1>", unsafe_allow_html=True)
+                "<h1 style='text-align: center; font-size: 25px'>Prohráli jste hru!</h1>", unsafe_allow_html=True)
             st.write("Číslo, které si robot vybral: " + str(st.session_state['computer']))
             st.form_submit_button("Restartovat Hru")
             reset_game()
